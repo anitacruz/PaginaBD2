@@ -1,44 +1,28 @@
 package ar.edu.itba.paw.webapp.controller;
 
-import ar.edu.itba.paw.interfaces.services.UserService;
+import ar.edu.itba.paw.interfaces.services.VehicleService;
+import ar.edu.itba.paw.models.Vehicle;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
-
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
 @Controller
-public class HelloWorldController {
+public class VehicleController {
     @Autowired
-    UserService userService;
-
-    @RequestMapping("/")
-    public ModelAndView helloWorld() {
-        return new ModelAndView("screenInfo");
-    }
-
-    @RequestMapping("/users")
-    public ModelAndView users(@RequestParam("id") String id){
-        final ModelAndView mav = new ModelAndView("screenInfo");
-        mav.addObject("greeting", userService.findById(id).getName());
-        return mav;
-    }
+    VehicleService vehicleService;
 
 
     @RequestMapping(value = "/image/{coordDest}")
@@ -70,5 +54,23 @@ public class HelloWorldController {
 
     }
 
+    @RequestMapping("/test/{vehicleId}")
+    public ModelAndView main(@PathVariable("vehicleId") Long vehicleId) {
+        final ModelAndView mav = new ModelAndView("test");
+        Optional<Vehicle> maybeVehicle = vehicleService.getNearbyLocations(vehicleId);
 
+        if(!maybeVehicle.isPresent()) {
+            System.out.println("Hubo un error en el servicio!");
+            return new ModelAndView("redirect:/error");
+        }
+
+        mav.addObject("vehicle", maybeVehicle.get());
+        return mav;
+    }
+
+    @RequestMapping("/error")
+    public ModelAndView error(){
+        final ModelAndView mav = new ModelAndView("error");
+        return mav;
+    }
 }

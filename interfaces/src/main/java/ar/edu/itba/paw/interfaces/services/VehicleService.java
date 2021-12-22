@@ -2,7 +2,9 @@ package ar.edu.itba.paw.interfaces.services;
 
 import ar.edu.itba.paw.models.Vehicle;
 
-public interface LocationService {
+import java.util.Optional;
+
+public interface VehicleService {
 	//Devuelve el vehículo y las ubicaciones cercanas
-	Vehicle getNearbyLocations(long vehicleId);
+	Optional<Vehicle> getNearbyLocations(long vehicleId);
 }
