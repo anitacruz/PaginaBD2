@@ -31,7 +31,7 @@
 				</div>
 
 				<div class="col">
-					<img src="<c:out value="/image/-34.6112837,-58.4264576"/>"/>
+					<img src="<c:out value="/image/-34.6112837/-58.4264576/qr"/>"/>
 				</div>
 			</div>
 		</div>

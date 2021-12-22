@@ -25,9 +25,10 @@ public class VehicleController {
     VehicleService vehicleService;
 
 
-    @RequestMapping(value = "/image/{coordDest}")
-    public ResponseEntity<byte[]> getImage(@PathVariable("coordDest") String coordDest ) throws Exception {
-        BufferedImage image = generateQRCodeImage("https://www.google.com/maps/dir//"+coordDest);
+    @RequestMapping(value = "/image/{lat}/{long}/qr")
+    public ResponseEntity<byte[]> getImage(@PathVariable("lat") String lat,@PathVariable("long") String longitude ) throws Exception {
+        System.out.println("[" + lat + "],["+longitude+"]");
+        BufferedImage image = generateQRCodeImage("https://www.google.com/maps/dir/"+lat+","+longitude);
         return ResponseEntity.ok().body(toByteArray(image, "png"));
     }
 

@@ -21,7 +21,7 @@
 			<hr>
 			<div class="row">
 				<div class="col">
-					<img src="<c:out value="/image/${location.position[0]},${location.position[1]}"/>"/>
+					<img src="<c:out value="/image/${location.position[0]}/${location.position[1]}/qr"/>"/>
 				</div>
 				<div class="col" style="margin-top: 5px">
 					<p>Name: ${location.name}</p>
