@@ -55,6 +55,11 @@ public class VehicleController {
 
     }
 
+    @RequestMapping("/")
+    public ModelAndView root(){
+        return new ModelAndView("screenInfo");
+    }
+
     @RequestMapping("/test/{vehicleId}")
     public ModelAndView main(@PathVariable("vehicleId") Long vehicleId) {
         final ModelAndView mav = new ModelAndView("test");
