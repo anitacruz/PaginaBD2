@@ -68,6 +68,18 @@ public class VehicleController {
         mav.addObject("vehicle", maybeVehicle.get());
         return mav;
     }
+    @RequestMapping("/track/{period}/{vehicleId}")
+    public ModelAndView track(@PathVariable("vehicleId") Long vehicleId , @PathVariable("period") Long period) {
+        final ModelAndView mav = new ModelAndView("track");
+        Optional<Vehicle> maybeVehicle = vehicleService.getNearbyLocations(vehicleId);
+        if(!maybeVehicle.isPresent()) {
+            System.out.println("Hubo un error en el servicio!");
+            return new ModelAndView("redirect:/error");
+        }
+        mav.addObject("period" , period *1000);
+        mav.addObject("vehicle", maybeVehicle.get());
+        return mav;
+    }
 
     @RequestMapping("/error")
     public ModelAndView error(){
