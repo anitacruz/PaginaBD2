@@ -14,6 +14,6 @@
 		  integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
 <body>
-<p class="h2 text-danger">¡Hubo un error!</p>
+<p class="h2 text-danger">Hubo un error!</p>
 </body>
 </html>

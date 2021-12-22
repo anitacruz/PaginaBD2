@@ -57,7 +57,7 @@ public class VehicleController {
 
     @RequestMapping("/")
     public ModelAndView root(){
-        return new ModelAndView("screenInfo");
+        return new ModelAndView("redirect:/track/20/90001");
     }
 
     @RequestMapping("/test/{vehicleId}")
