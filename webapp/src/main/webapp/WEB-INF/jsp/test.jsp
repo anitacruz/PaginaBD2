@@ -19,11 +19,23 @@
 	<div style="margin-left: 10%">
 		<c:forEach items="${vehicle.near}" var="location">
 			<hr>
-			<p>Name: ${location.name}</p>
-			<p>Amenity: ${location.amenity}</p>
-			<p>Website: ${location.website}</p>
-			<p>Distance: ${location.distance}</p>
-			<p>Position: ${location.position}</p>
+			<div class="row">
+				<div class="col">
+					<img src="<c:out value="/image/${location.position[0]},${location.position[1]}"/>"/>
+				</div>
+				<div class="col" style="margin-top: 5px">
+					<p>Name: ${location.name}</p>
+					<p>Amenity: ${location.amenity}</p>
+					<c:if test="${location.website}">
+						<p>Website: ${location.website}</p>
+					</c:if>
+					<p>Distance: ${location.distance}</p>
+					<p>Position: [${location.position[0]},${location.position[1]}]</p>
+				</div>
+				<div class="col">
+
+				</div>
+			</div>
 		</c:forEach>
 	</div>
 </div>
