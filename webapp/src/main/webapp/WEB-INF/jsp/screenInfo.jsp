@@ -49,7 +49,6 @@
 <div class="carousel slide" data-bs-ride="carousel">
 	<div class="carousel-inner">
 
-		<c:forEach var="">
 			<div class="carousel-item active">
 				<div class="d-flex flex-column justify-content-center w-100 h-100">
 
@@ -72,8 +71,51 @@
 					</div>
 
 				</div>
+				<div class="carousel-item ">
+					<div class="d-flex flex-column justify-content-center w-100 h-100">
+
+						<div class="row">
+							<div class="col">
+								<div class="d-flex flex-column justify-content-center align-items-center mt-3 ml-3">
+									<h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">Tentate:</h2>
+									<h1 class="font-weight-bolder text-white m-0" style="font-size: 8em">McDonalds</h1>
+									<h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">A 300m</h2>
+								</div>
+							</div>
+
+							<div class="col">
+								<div class="d-flex flex-column justify-content-center align-items-center">
+									<h2 class="font-weight-bolder text-white m-0 mb-3" style="font-size: 3em">Como llegar:</h2>
+									<img src="<c:out value="/image/-34.6112837/-58.4264576/qr"/>"/>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="carousel-item">
+						<div class="d-flex flex-column justify-content-center w-100 h-100">
+
+							<div class="row">
+								<div class="col">
+									<div class="d-flex flex-column justify-content-center align-items-center mt-3 ml-3">
+										<h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">Tentate:</h2>
+										<h1 class="font-weight-bolder text-white m-0" style="font-size: 8em">McDonalds</h1>
+										<h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">A 300m</h2>
+									</div>
+								</div>
+
+								<div class="col">
+									<div class="d-flex flex-column justify-content-center align-items-center">
+										<h2 class="font-weight-bolder text-white m-0 mb-3" style="font-size: 3em">Como llegar:</h2>
+										<img src="<c:out value="/image/-34.6112837/-58.4264576/qr"/>"/>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
 			</div>
-		</c:forEach>
 
 	</div>
 </div>
