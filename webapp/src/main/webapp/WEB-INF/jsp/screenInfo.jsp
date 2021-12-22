@@ -46,7 +46,11 @@
 
 <body class="bg-dark">
 
-<div class="carousel slide" data-bs-ride="carousel"  data-interval="500" >
+<div>
+	<p class="fw-light text-white h3 position-absolute top-0 end-0 mr-3"> Hello 90100!</p>
+</div>
+
+<div class="carousel slide" data-bs-ride="carousel"  >
 	<div class="carousel-inner">
 
 		<div class="carousel-item active">
@@ -55,7 +59,7 @@
 					<div class="col">
 						<div class="d-flex flex-column justify-content-center align-items-center mt-3 ml-3">
 							<h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">Tentate:</h2>
-							<h1 class="font-weight-bolder text-white m-0" style="font-size: 8em">STARBUCKS</h1>
+							<h1 class="font-weight-bolder text-white m-0 text-center" style="font-size: 8em">STARBUCKS con un nombre larguisimo </h1>
 							<h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">A 300m</h2>
 						</div>
 					</div>

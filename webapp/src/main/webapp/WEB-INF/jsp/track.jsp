@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Hello World!</title>
+    <title>Tracking</title>
 
 
     <!-- Icons -->
@@ -51,11 +51,10 @@
 </head>
 <body>
 
+
+
 <div>
-    <p class="h2"> Hello ${vehicle.vehicleId}!</p>
-    <p class="h3">Position: ${vehicle.position}</p>
-    <div style="margin-left: 10%">
-    </div>
+    <p class="fw-light text-white h3 position-absolute top-0 end-0 mr-3"> Vehiculo ${vehicle.vehicleId}</p>
 </div>
 
 
@@ -90,7 +89,7 @@
                         <div class="col">
                             <div class="d-flex flex-column justify-content-center align-items-center mt-3 ml-3">
                                 <h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">${location.amenity.replace('_' , ' ')}:</h2>
-                                <h1 class="font-weight-bolder text-white m-0" style="font-size: 8em">${location.name}</h1>
+                                <h1 class="font-weight-bolder text-white m-0 text-center" style="font-size: 8em">${location.name}</h1>
                                 <h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">A ${location.distance.intValue()}m</h2>
                             </div>
                         </div>
