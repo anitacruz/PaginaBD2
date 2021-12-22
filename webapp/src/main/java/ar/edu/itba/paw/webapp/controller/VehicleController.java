@@ -28,7 +28,7 @@ public class VehicleController {
     @RequestMapping(value = "/image/{lat}/{long}/qr")
     public ResponseEntity<byte[]> getImage(@PathVariable("lat") String lat,@PathVariable("long") String longitude ) throws Exception {
         System.out.println("[" + lat + "],["+longitude+"]");
-        BufferedImage image = generateQRCodeImage("https://www.google.com/maps/dir/"+lat+","+longitude);
+        BufferedImage image = generateQRCodeImage("https://www.google.com/maps/dir//"+lat+","+longitude);
         return ResponseEntity.ok().body(toByteArray(image, "png"));
     }
 

@@ -20,32 +20,48 @@
     </script>
 </head>
 <body>
+
 <div>
     <p class="h2"> Hello ${vehicle.vehicleId}!</p>
     <p class="h3">Position: ${vehicle.position}</p>
     <div style="margin-left: 10%">
+    </div>
+</div>
+
+
+<div class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
         <c:forEach items="${vehicle.near}" var="location">
-            <hr>
-            <div class="row">
-                <div class="col">
-                    <img src="<c:out value="/image/${location.position[0]}/${location.position[1]}/qr"/>"/>
-                </div>
-                <div class="col" style="margin-top: 5px">
-                    <p>Name: ${location.name}</p>
-                    <p>Amenity: ${location.amenity}</p>
-                    <c:if test="${location.website}">
-                        <p>Website: ${location.website}</p>
-                    </c:if>
-                    <p>Distance: ${location.distance}</p>
-                    <p>Position: [${location.position[0]},${location.position[1]}]</p>
-                </div>
-                <div class="col">
+            <div class="carousel-item active">
+                <div class="d-flex flex-column justify-content-center w-100 h-100">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="d-flex flex-column justify-content-center align-items-center mt-3 ml-3">
+                                <h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">${location.amenity}:</h2>
+                                <h1 class="font-weight-bolder text-white m-0" style="font-size: 8em">${location.name}</h1>
+                                <h2 class="font-weight-bolder text-white m-0" style="font-size: 6em">A ${location.distance.intValue()}m</h2>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <h2 class="font-weight-bolder text-white m-0 mb-3" style="font-size: 3em">Como llegar:</h2>
+                                <img src="<c:out value="/image/${location.position[0]}/${location.position[1]}/qr"/>"/>
+
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </c:forEach>
+
     </div>
 </div>
+
+
 
 
 </body>
